@@ -1,6 +1,8 @@
 #include <WiFi.h>
+//http post method as images are larger in size
 #include <HTTPClient.h>
 #include "esp_camera.h"
+//encoded using base64 to prevent possible conflict of data, will have to decode via node-red
 #include "base64.h"
 
 // WiFi credentials
@@ -40,6 +42,7 @@ const unsigned long captureInterval = ;
 char macAddress[18];
 
 void setup() {
+  //baud rate aka speed of transfer of data
   Serial.begin(115200);
   connectToWiFi();
   initCamera();
