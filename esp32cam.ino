@@ -111,7 +111,7 @@ void captureAndSendImage() {
   // Encode the image to base64
   String base64Image = base64::encode(fb->buf, fb->len);
 
-// Get MAC address of ESP32-CAM
+  // Get MAC address of ESP32-CAM, not necessary but useful if u need something to distinguish a bunch of cams
   String camID = WiFi.macAddress();
   camID.toCharArray(macAddress, 18);
 
